@@ -20,6 +20,8 @@
   "name":"Agartha",
   "resources":[
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"Bloke","path":"sprites/Bloke/Bloke.yy",},},
+    {"id":{"name":"Yakub","path":"sprites/Yakub/Yakub.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
