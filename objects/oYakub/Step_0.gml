@@ -41,5 +41,5 @@ if (on_ground && obj_player.y < y - 32) {
 
 if (oBloke.x = x && o.Bloke.y == y)
 {
-	room_goto(rm_GameOver);
+	room_goto(GameOver);
 }

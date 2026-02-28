@@ -38,7 +38,7 @@ move_and_collide(0, y_speed, oSolid);
 
 if (place_meeting(x, y, oSpikes)) { //collides with spikes
 
-    room_restart() // restart the level
+    room_goto(GameOver)
 
 }
 
@@ -55,3 +55,6 @@ if keyboard_check(vk_right) {
     image_xscale = -0.1; //faces left
 
 }
+
+
+
