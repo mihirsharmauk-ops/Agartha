@@ -2,27 +2,25 @@ x_spd = 0;
 y_spd = 0;
 
 move_speed = 2.5;
-grav = 2;
-jump_force = -10;
+grav = 0.5;
+jump_force = -8;
 
 y_spd += grav;
 
-// Follow player
+// Chase player
 if (instance_exists(oBloke)) {
-    var _dist = point_distance(x, y, oBloke.x, oBloke.y);
-
     // Horizontal chase
-    if (oBloke.x < x) {
+    if (oBloke.x < x - 4) {
         x_spd = -move_speed;
         image_xscale = -0.1;
-    } else {
+    } else if (oBloke.x > x + 4) {
         x_spd = move_speed;
         image_xscale = 0.1;
     }
 
-    // Jump when player is above and we're on the ground
+    // Jump when player is above and reachable
     var _on_ground = place_meeting(x, y + 1, oSolid);
-    if (_on_ground && oBloke.y < y - 16 && abs(oBloke.x - x) < 120) {
+    if (_on_ground && oBloke.y < y - 20 && abs(oBloke.x - x) < 160) {
         y_spd = jump_force;
     }
 }
@@ -47,7 +45,7 @@ y += y_spd;
 
 // Collision with player ends the game
 if (instance_exists(oBloke)) {
-    if (distance_to_object(oBloke) < 16) {
+    if (place_meeting(x, y, oBloke)) {
         room_goto(GameOver);
     }
 }
