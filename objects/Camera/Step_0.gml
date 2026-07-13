@@ -1,11 +1,17 @@
 following = oBloke; 
 
 if (instance_exists(following)) {
-	camW = camera_get_view_width(cam);
-	camH = camera_get_view_height(cam)
+	if (!variable_instance_exists(id, "cam")) {
+		cam = view_camera[0];
+	}
 	
-	xTo = following.x - camW/2;
-	yTo = following.y - camH/2;
+	if (cam != -1) {
+		camW = camera_get_view_width(cam);
+		camH = camera_get_view_height(cam);
 	
-	camera_set_view_pos(cam, xTo, yTo);
+		xTo = following.x - camW/2;
+		yTo = following.y - camH/2;
+	
+		camera_set_view_pos(cam, xTo, yTo);
+	}
 }
