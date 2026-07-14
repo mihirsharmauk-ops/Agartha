@@ -17,7 +17,7 @@ if keyboard_check(vk_right) {
 //CHECK IF ON GROUND
 if (place_meeting(x, y + 1, oSolid)) {
     if (keyboard_check_pressed(vk_up)) {
-        y_speed = -10;
+        y_speed = -15;
     } else {
         y_speed = 0;
     }

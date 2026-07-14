@@ -50,7 +50,4 @@ if (instance_exists(oBloke)) {
     }
 }
 
-// Collides with spikes
-if (place_meeting(x, y, oSpikes)) {
-    room_goto(GameOver);
-}
+
